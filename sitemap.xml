@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/08/Hello-MLOps/</loc>
+    
+    <lastmod>2020-05-09T12:45:46.214Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/07/28/[%EC%B1%85]%EC%95%84%EB%A7%88%EC%A1%B4vs%EA%B5%AC%EA%B8%80%20%EB%AF%B8%EB%9E%98%EC%A0%84%EC%9F%81/</loc>
     
     <lastmod>2020-05-09T12:04:45.188Z</lastmod>
@@ -96,13 +103,6 @@
     <loc>http://yoursite.com/2019/12/18/Hello-Open%20Distro%20for%20Elasticsearch/</loc>
     
     <lastmod>2020-05-09T11:46:36.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/05/08/Hello-MLOps/</loc>
-    
-    <lastmod>2020-05-09T11:46:35.994Z</lastmod>
     
   </url>
   

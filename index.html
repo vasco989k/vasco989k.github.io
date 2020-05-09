@@ -43,6 +43,15 @@
 
   <title>나를 위해 정리하는 블로그</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83787004-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-83787004-2');
+      }
+    </script>
 
 
 
@@ -210,7 +219,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2020-05-09 00:00:00 / Updated at: 20:46:35" itemprop="dateCreated datePublished" datetime="2020-05-09T00:00:00+09:00">2020-05-09</time>
+              <time title="Post created: 2020-05-09 00:00:00 / Updated at: 21:45:46" itemprop="dateCreated datePublished" datetime="2020-05-09T00:00:00+09:00">2020-05-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,27 +259,14 @@
           <h2 id="DevOps-MLOps"><a href="#DevOps-MLOps" class="headerlink" title="DevOps , MLOps"></a>DevOps , MLOps</h2><p>DevOps도 글과 경험일부로만 접했는데 업무 중에 MLOps에 알아볼 시간이 생겨 정리한다<br>DevOps의 목표 중 지속적 통합, 테스트 자동화, 그리고 배포 자동화 있다.<br>DevOps팀은 컴파일, 빌드 그리고 배포(Deploy)를 돕는 자동화된 프로세스/툴들의 묶음인 Workflow/ToolChain 가지고 효율적인 활동을 이어간다.</p>
 <p><img src="https://miro.medium.com/max/1392/0*PD56hZAjIFzaTmlM.png" alt="Dev Workflow"><br><img src="https://miro.medium.com/max/1400/0*z29zjiWYLa_SfFyZ.png" alt="ML Workflow"></p>
 <p>MLOps는 ML을 위한 DevOps이다.<br>MLOps의 목표에는 “모델의 실험 및 개발속도 향상” , “프로덕션 환경에 더 빠르게 모델 배포”,”재현가능한 모델을 통해 품질 및 일관성 보장” 등이 있다.</p>
-<p><img src="https://miro.medium.com/max/1400/1*kwT5tiR4OqhcSVQh7lp9Nw.png" alt="ML시스템 구성"><br><img src="https://opensource.com/sites/default/files/uploads/kubeflow_compostability.png" alt="ML파이프라인"></p>
-<p>대표적인 MLOps의 ToolChain에는 mlflow, Kubeflow가 있다.<br>ML Workflow를 Experimental Phase, Production Phase로 나누어<br>각 단계에 대해 지원하는 바를 가난히 보면 좋겠다.<br><img src="https://www.kubeflow.org/docs/images/kubeflow-overview-workflow-diagram-1.svg" alt="kubeflow-overview-workflow-diagram"></p>
-<h2 id="mlflow"><a href="#mlflow" class="headerlink" title="mlflow"></a>mlflow</h2><p>mlflow의 논리적 컴포넌트 구성은 4개로 구성되어 있다.<br>mlflow는 단독 파이썬 패키지로 구성되어 있어 가볍고 빠르게 Workflow지원 가능하다.  </p>
-<ul>
-<li>MLflow Tracking : Record and query experiments: code, data, config, and results</li>
-<li>MLflow Projects : Package data science code in a format to reproduce runs on any platform</li>
-<li>MLflow Models : Deploy machine learning models in diverse serving environments</li>
-<li>Model Registry : Store, annotate, discover, and manage models in a central repository</li>
-</ul>
-<p>Tracking을 통해 실험시 사용한 파라미터를 기록하고<br>Project를 통해 어떤 플랫폼에서든 동일한 내용을 보장하는 패키징을 하여 딜리버리 지원<br>Models로 디플로이를 진행하며<br>Registry 패키지를 통해 이 전반적인 활동을 지원한다.</p>
-<p>mlflow기본개념을 katacoda(<a href="https://www.katacoda.com/cfregly/scenarios/mlflow)를" target="_blank" rel="noopener">https://www.katacoda.com/cfregly/scenarios/mlflow)를</a> 통해 무료 튜토리얼을 진행해 봄으로써 알 수 있다.</p>
-<p>mlflow는 가벼운 구성으로 Data관리를 지원하는 dvc , jenkins등<br>기존 구성이 있거나 나만의 구성을 하는데 어렵지 않을 것 같다.<br><img src="https://miro.medium.com/max/1086/1*_n7ZBHFfiH2-BN1wx6UETw.png" alt="dvc+mlflow"></p>
-<h2 id="kubeflow"><a href="#kubeflow" class="headerlink" title="kubeflow"></a>kubeflow</h2><p>kubeflow의 논리적 컴포넌트 구성은 4개로 구성되어 있다.<br>kubeflow는 여러 패키지들의 복합구성으로 복잡하지만 더 많은 기능을 제공한다.<br>각 패키지들은 독립적으로 개발되어 일부만 활용가능하다.</p>
-<p>Central Dashboard : The central user interface (UI) in Kubeflow<br>Metadata : Tracking and managing metadata of machine learning workflows in Kubeflow<br>Jupyter Notebooks : Using Jupyter notebooks in Kubeflow<br>Frameworks for Training : Training of ML models in Kubeflow<br>Hyperparameter Tuning : Hyperparameter tuning of ML models in Kubeflow<br>Pipelines : ML Pipelines in Kubeflow<br>Tools for Serving : Serving of ML models in Kubeflow<br>Multi-Tenancy in Kubeflow : Multi-user isolation and identity access management (IAM)<br>Miscellaneous : Miscellaneous Kubeflow components</p>
-<p>mlflow보다 Kubeflow는 Kubernete기반에서 더 강력한 기능을 제공하여 Workflow를 지원한다.</p>
-<p>물리적 컴포넌트 구성을 살펴보면<br>쿠버네티스 환경을 활용한 모델학습 및 배포등 Job관리지원하는 Fairing<br>hyperparmeter tuning을 지원하는 Katlib<br>분산학습 환경 지원하는 MPI Operator등 이 있다</p>
-<p>kubeflow도 katacoda(<a href="https://www.katacoda.com/kubeflow)를" target="_blank" rel="noopener">https://www.katacoda.com/kubeflow)를</a> 통해 기본개념을 익힐 수 있는 무료 튜토리얼을 진행해 볼 수 있다.</p>
-<p>가장 좋은 도구는 존재하지만 필요한건 나에게 가장 적합한 도구일 것이다.<br>도입이 이뤄져 인력구성 , 비용등을 따져 다시 한번 비교하는 글을 썼으면 좋겠다.</p>
-<p><img src="https://miro.medium.com/max/1400/1*YiHVK-zc04zemqt1bq990A.png" alt="오픈소스로 구성한 ML시스템개발 사이클"></p>
-<h3 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h3><p><a href="https://bcho.tistory.com/1301" target="_blank" rel="noopener">End2End 머신러닝 플랫폼 Kubeflow</a><br><a href="https://medium.com/daangn/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%B6%94%EC%B2%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-in-production-fa623877e56a" target="_blank" rel="noopener">딥러닝 추천 시스템 in production</a><br><a href="https://linux.systemv.pe.kr/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81%EC%97%90%EC%84%9C-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8pipeline%EC%9D%80-%EB%AC%B4%EC%97%87/" target="_blank" rel="noopener">소프트웨어 엔지니어링에서 파이프라인(PIPELINE)은 무엇인가? DEPLOYMENT, CI &amp; CD 파이프라인에 대한 소개</a><br><a href="https://towardsdatascience.com/mlops-reducing-the-technical-debt-of-machine-learning-dac528ef39de" target="_blank" rel="noopener">MLOps-Reducing the technical debt of Machine Learning</a><br><a href="https://github.com/MLOpsKR/Awesome-MLOps-Contents" target="_blank" rel="noopener">Awesome-MLOps-Contents</a><br><a href="https://towardsdatascience.com/mlops-with-a-feature-store-816cfa5966e9" target="_blank" rel="noopener">mlops-with-a-feature-store</a><br><a href="https://dvc.org/doc/home" target="_blank" rel="noopener">dvc</a><br><a href="https://mlflow.org/" target="_blank" rel="noopener">mlops</a><br><a href="https://zzsza.github.io/mlops/2019/10/06/fullstack-deeplearning-bootcamp/" target="_blank" rel="noopener">fullstack-deeplearning-bootcamp</a><br><a href="https://medium.com/analytics-vidhya/cd4ml-part-2a-ad8326d7d91b" target="_blank" rel="noopener">Enterprise Intelligence — CD4ML/MLOps</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/08/Hello-MLOps/#more" rel="contents">
+                더 읽어보기 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

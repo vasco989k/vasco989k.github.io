@@ -107,6 +107,24 @@ permission java.io.FilePermission &quot;&lt;&lt;ALL FILES&gt;&gt;&quot;&gt;&gt;&
       </tags>
   </entry>
   <entry>
+    <title>Elasticsearch와 L4스위치 사용</title>
+    <url>/2018/09/01/Elasticsearch%EC%99%80-L4%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%82%AC%EC%9A%A9/</url>
+    <content><![CDATA[<p>Elasticsearch Client로 Transport Client를 사용하면서<br>external load balancer로 L4스위치를 고민하게 되었다.</p>
+<p>의견을 내는데 큰 도움을 받은 자료를 공유한다.<br><a href="http://jjeong.tistory.com/737" target="_blank" rel="noopener">L4도입에 대한 이슈#1</a><br><a href="https://www.facebook.com/groups/elasticsearch.kr/permalink/1363711783714658/" target="_blank" rel="noopener">L4도입에 대한 이슈#2</a></p>
+<p>아래는 그에 대한 답변정도가 될것 같다<br><a href="https://discuss.elastic.co/t/problem-with-transport-client-and-elasticsearch-cluster-behind-load-balancer/34989" target="_blank" rel="noopener">외부 로드발란서와 Transport client사용에 대한 의견</a></p>
+<p>그 외 참고<br><a href="http://tech.kakao.com/2014/05/30/l4/" target="_blank" rel="noopener">L4스위치 동작 설명</a></p>
+<p>해야할 일은 L4 도입도 있고 Transport Client가 7.0.0에서 deprecated됨에 따라<br>REST client를 도입해야겠다.<br><a href="https://www.elastic.co/guide/en/elasticsearch/client/java-api/master/transport-client.html" target="_blank" rel="noopener">Transport client is deprecated </a></p>
+]]></content>
+      <categories>
+        <category>search</category>
+      </categories>
+      <tags>
+        <tag>elasticsearch</tag>
+        <tag>load balancer</tag>
+        <tag>elasticsearch transport client</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Google의 AI 접근. Teachable Machine</title>
     <url>/2019/11/23/Google%EC%9D%98%20AI%20%EC%A0%91%EA%B7%BC.%20Teachable%20Machine/</url>
     <content><![CDATA[<p><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener">https://teachablemachine.withgoogle.com/</a></p>
@@ -124,24 +142,6 @@ permission java.io.FilePermission &quot;&lt;&lt;ALL FILES&gt;&gt;&quot;&gt;&gt;&
         <tag>clustering</tag>
         <tag>MariaDB MHA</tag>
         <tag>Rabbitmq clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Elasticsearch와 L4스위치 사용</title>
-    <url>/2018/09/01/Elasticsearch%EC%99%80-L4%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%82%AC%EC%9A%A9/</url>
-    <content><![CDATA[<p>Elasticsearch Client로 Transport Client를 사용하면서<br>external load balancer로 L4스위치를 고민하게 되었다.</p>
-<p>의견을 내는데 큰 도움을 받은 자료를 공유한다.<br><a href="http://jjeong.tistory.com/737" target="_blank" rel="noopener">L4도입에 대한 이슈#1</a><br><a href="https://www.facebook.com/groups/elasticsearch.kr/permalink/1363711783714658/" target="_blank" rel="noopener">L4도입에 대한 이슈#2</a></p>
-<p>아래는 그에 대한 답변정도가 될것 같다<br><a href="https://discuss.elastic.co/t/problem-with-transport-client-and-elasticsearch-cluster-behind-load-balancer/34989" target="_blank" rel="noopener">외부 로드발란서와 Transport client사용에 대한 의견</a></p>
-<p>그 외 참고<br><a href="http://tech.kakao.com/2014/05/30/l4/" target="_blank" rel="noopener">L4스위치 동작 설명</a></p>
-<p>해야할 일은 L4 도입도 있고 Transport Client가 7.0.0에서 deprecated됨에 따라<br>REST client를 도입해야겠다.<br><a href="https://www.elastic.co/guide/en/elasticsearch/client/java-api/master/transport-client.html" target="_blank" rel="noopener">Transport client is deprecated </a></p>
-]]></content>
-      <categories>
-        <category>search</category>
-      </categories>
-      <tags>
-        <tag>elasticsearch</tag>
-        <tag>load balancer</tag>
-        <tag>elasticsearch transport client</tag>
       </tags>
   </entry>
   <entry>
@@ -168,64 +168,12 @@ permission java.io.FilePermission &quot;&lt;&lt;ALL FILES&gt;&gt;&quot;&gt;&gt;&
       </tags>
   </entry>
   <entry>
-    <title>책_아마존 vs. 구글 미래전쟁</title>
-    <url>/2019/07/28/%5B%EC%B1%85%5D%EC%95%84%EB%A7%88%EC%A1%B4vs%EA%B5%AC%EA%B8%80%20%EB%AF%B8%EB%9E%98%EC%A0%84%EC%9F%81/</url>
-    <content><![CDATA[<p>우리은행에서 머핀으로 하는 도서 경품 이벤트에 당첨이 되어<br>“아마존 vs. 구글 미래전쟁” 이란 책을 받게 되었다.</p>
-<p><img src="http://image.yes24.com/Goods/73363429/800x0" alt="아마존 vs. 구글 미래전쟁"></p>
-<p>내용은 책 서두에도 언급이 되는 데 IT업계의 두거인인 아마존과 구글을 알아봄으로써 미래에 대한 통찰을 얻을 수 있다는 것이다</p>
-<p>IT업계에 종사하면서 트랜드 관련 기사를 자주 보시는 분을에겐 추천할 만한 내용은 아니다.<br>해당 내용은 트랜드를 안다고 하는 분들에겐 상식 수준이다.</p>
-<ul>
-<li><p>아마존</p>
-<ul>
-<li>Kiba 물류로봇 인수로 ‘아마존 로보틱스’ 사명을 변경하여 물류 혁신을 이루고 있고</li>
-<li>자사 유휴 리소스를 개방함으로써 클라우드 시장을 개척하고 이제는 IoT+AI를 추진</li>
-<li>예측을 통한 물류혁신으로 고객 주문 전에 근처 물류센터에 배송을 해 줌으로 결제 예측 배송을 준비하고 있다.<br><img src="http://www.bloter.net/wp-content/uploads/2014/01/amazon_patent.jpg" alt="결제 예측 배송"> </li>
-<li>아마존은 대표적으로 리테일 시장에서 가치 사슬 파악을 통해 미들맨 제거를 목표 함으로써 파괴적 혁신을 꾀하고 있다.</li>
-<li>아마존 셀러에게 대출 서비스 , 무인 판매를 위한 아마존 고 아마존은 본연 핵심사업에서도 꾸준히 두각을 나타내고 있다.</li>
-</ul>
-</li>
-<li><p>구글</p>
-<ul>
-<li>캘리코를 설립함으써 생명공학 및 헬스케어에 투자를 진행하고 있다. </li>
-<li>Auto ML로 대표되는 AI 자동화를 통해 대중화를 이끌고 있다.</li>
-<li>머신러닝 전용 칩인 TPU를 내놨다.</li>
-<li>구글 내 테크 인큐베이터인 직소가 있다. 가난 등 적극적 자유 문제 해결이 아닌 개인사에 관한 침해도구를 없애는 목표를 갖고 있다고 한다.</li>
-<li>지금도 더 나은 자율 주행을 위하여 달리고 있는 웨이모가 있다.</li>
-</ul>
-<ul>
-<li><p>아마존과 구글이 만들어낸 적</p>
-<ul>
-<li>탈중앙화를 위한 블록 체인<ul>
-<li>하드웨어 업체들과 Edge Computing을 준비하는 소프트 뱅크 연합군인 비전펀드 그리고 반도체 군단<br><img src="https://s.yimg.com/uu/api/res/1.2/fReK1z77TZWpuq16DxoveQ--~B/aD05MjI7dz0xMTI4O3NtPTE7YXBwaWQ9eXRhY2h5b24-/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2018-11/fdc8b020-de09-11e8-bf76-9214e69cbd25" alt="비전펀드 주요 투자사"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>거대한 중국 내수 시장을 등에 업은 알리바바 , 텐센트 , 바이두, 시트립 닷컴 등 중국 메가 테크 기업들 </p>
-</li>
-</ul>
-<p>위와 같은 내용으로 구성되어 마지막엔 이 들과 파트너가 될 것인가? 적이 될것인가? 라는 질문으로 마무리 된다.</p>
-<p>다 읽고 나서 느낌은 기본 소양 내용이다라는 것이다.<br>두 기업의 사업내용과 글로벌 IT기업 구도는 널리 알려져 있어 그렇게 와 닿는 내용은 아니었다.<br>그렇지만 빠르게 언급한 부분을 알고 싶다면 좋은 책임은 분명하다. </p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Archive</category>
-      </categories>
-      <tags>
-        <tag>미래전쟁</tag>
-        <tag>아마존</tag>
-        <tag>구글</tag>
-        <tag>책</tag>
-        <tag>도서</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello , MLOps</title>
     <url>/2020/05/08/Hello-MLOps/</url>
     <content><![CDATA[<h2 id="DevOps-MLOps"><a href="#DevOps-MLOps" class="headerlink" title="DevOps , MLOps"></a>DevOps , MLOps</h2><p>DevOps도 글과 경험일부로만 접했는데 업무 중에 MLOps에 알아볼 시간이 생겨 정리한다<br>DevOps의 목표 중 지속적 통합, 테스트 자동화, 그리고 배포 자동화 있다.<br>DevOps팀은 컴파일, 빌드 그리고 배포(Deploy)를 돕는 자동화된 프로세스/툴들의 묶음인 Workflow/ToolChain 가지고 효율적인 활동을 이어간다.</p>
 <p><img src="https://miro.medium.com/max/1392/0*PD56hZAjIFzaTmlM.png" alt="Dev Workflow"><br><img src="https://miro.medium.com/max/1400/0*z29zjiWYLa_SfFyZ.png" alt="ML Workflow"></p>
 <p>MLOps는 ML을 위한 DevOps이다.<br>MLOps의 목표에는 “모델의 실험 및 개발속도 향상” , “프로덕션 환경에 더 빠르게 모델 배포”,”재현가능한 모델을 통해 품질 및 일관성 보장” 등이 있다.</p>
+<a id="more"></a>
 <p><img src="https://miro.medium.com/max/1400/1*kwT5tiR4OqhcSVQh7lp9Nw.png" alt="ML시스템 구성"><br><img src="https://opensource.com/sites/default/files/uploads/kubeflow_compostability.png" alt="ML파이프라인"></p>
 <p>대표적인 MLOps의 ToolChain에는 mlflow, Kubeflow가 있다.<br>ML Workflow를 Experimental Phase, Production Phase로 나누어<br>각 단계에 대해 지원하는 바를 가난히 보면 좋겠다.<br><img src="https://www.kubeflow.org/docs/images/kubeflow-overview-workflow-diagram-1.svg" alt="kubeflow-overview-workflow-diagram"></p>
 <h2 id="mlflow"><a href="#mlflow" class="headerlink" title="mlflow"></a>mlflow</h2><p>mlflow의 논리적 컴포넌트 구성은 4개로 구성되어 있다.<br>mlflow는 단독 파이썬 패키지로 구성되어 있어 가볍고 빠르게 Workflow지원 가능하다.  </p>
@@ -279,6 +227,59 @@ permission java.io.FilePermission &quot;&lt;&lt;ALL FILES&gt;&gt;&quot;&gt;&gt;&
       <tags>
         <tag>Open Distro for Elasticsearch</tag>
         <tag>Elasticsearch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>책_아마존 vs. 구글 미래전쟁</title>
+    <url>/2019/07/28/%5B%EC%B1%85%5D%EC%95%84%EB%A7%88%EC%A1%B4vs%EA%B5%AC%EA%B8%80%20%EB%AF%B8%EB%9E%98%EC%A0%84%EC%9F%81/</url>
+    <content><![CDATA[<p>우리은행에서 머핀으로 하는 도서 경품 이벤트에 당첨이 되어<br>“아마존 vs. 구글 미래전쟁” 이란 책을 받게 되었다.</p>
+<p><img src="http://image.yes24.com/Goods/73363429/800x0" alt="아마존 vs. 구글 미래전쟁"></p>
+<p>내용은 책 서두에도 언급이 되는 데 IT업계의 두거인인 아마존과 구글을 알아봄으로써 미래에 대한 통찰을 얻을 수 있다는 것이다</p>
+<p>IT업계에 종사하면서 트랜드 관련 기사를 자주 보시는 분을에겐 추천할 만한 내용은 아니다.<br>해당 내용은 트랜드를 안다고 하는 분들에겐 상식 수준이다.</p>
+<ul>
+<li><p>아마존</p>
+<ul>
+<li>Kiba 물류로봇 인수로 ‘아마존 로보틱스’ 사명을 변경하여 물류 혁신을 이루고 있고</li>
+<li>자사 유휴 리소스를 개방함으로써 클라우드 시장을 개척하고 이제는 IoT+AI를 추진</li>
+<li>예측을 통한 물류혁신으로 고객 주문 전에 근처 물류센터에 배송을 해 줌으로 결제 예측 배송을 준비하고 있다.<br><img src="http://www.bloter.net/wp-content/uploads/2014/01/amazon_patent.jpg" alt="결제 예측 배송"> </li>
+<li>아마존은 대표적으로 리테일 시장에서 가치 사슬 파악을 통해 미들맨 제거를 목표 함으로써 파괴적 혁신을 꾀하고 있다.</li>
+<li>아마존 셀러에게 대출 서비스 , 무인 판매를 위한 아마존 고 아마존은 본연 핵심사업에서도 꾸준히 두각을 나타내고 있다.</li>
+</ul>
+</li>
+<li><p>구글</p>
+<ul>
+<li>캘리코를 설립함으써 생명공학 및 헬스케어에 투자를 진행하고 있다. </li>
+<li>Auto ML로 대표되는 AI 자동화를 통해 대중화를 이끌고 있다.</li>
+<li>머신러닝 전용 칩인 TPU를 내놨다.</li>
+<li>구글 내 테크 인큐베이터인 직소가 있다. 가난 등 적극적 자유 문제 해결이 아닌 개인사에 관한 침해도구를 없애는 목표를 갖고 있다고 한다.</li>
+<li>지금도 더 나은 자율 주행을 위하여 달리고 있는 웨이모가 있다.</li>
+</ul>
+<ul>
+<li><p>아마존과 구글이 만들어낸 적</p>
+<ul>
+<li>탈중앙화를 위한 블록 체인<ul>
+<li>하드웨어 업체들과 Edge Computing을 준비하는 소프트 뱅크 연합군인 비전펀드 그리고 반도체 군단<br><img src="https://s.yimg.com/uu/api/res/1.2/fReK1z77TZWpuq16DxoveQ--~B/aD05MjI7dz0xMTI4O3NtPTE7YXBwaWQ9eXRhY2h5b24-/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2018-11/fdc8b020-de09-11e8-bf76-9214e69cbd25" alt="비전펀드 주요 투자사"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>거대한 중국 내수 시장을 등에 업은 알리바바 , 텐센트 , 바이두, 시트립 닷컴 등 중국 메가 테크 기업들 </p>
+</li>
+</ul>
+<p>위와 같은 내용으로 구성되어 마지막엔 이 들과 파트너가 될 것인가? 적이 될것인가? 라는 질문으로 마무리 된다.</p>
+<p>다 읽고 나서 느낌은 기본 소양 내용이다라는 것이다.<br>두 기업의 사업내용과 글로벌 IT기업 구도는 널리 알려져 있어 그렇게 와 닿는 내용은 아니었다.<br>그렇지만 빠르게 언급한 부분을 알고 싶다면 좋은 책임은 분명하다. </p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Archive</category>
+      </categories>
+      <tags>
+        <tag>미래전쟁</tag>
+        <tag>아마존</tag>
+        <tag>구글</tag>
+        <tag>책</tag>
+        <tag>도서</tag>
       </tags>
   </entry>
   <entry>
