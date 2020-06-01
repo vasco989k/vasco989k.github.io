@@ -519,9 +519,31 @@ permission java.io.FilePermission &quot;&lt;&lt;ALL FILES&gt;&gt;&quot;&gt;&gt;&
       </tags>
   </entry>
   <entry>
+    <title>은전한닢 형태소 분석기 사전 사용</title>
+    <url>/2018/11/08/%EC%9D%80%EC%A0%84%ED%95%9C%EB%8B%A2-%ED%98%95%ED%83%9C%EC%86%8C-%EB%B6%84%EC%84%9D%EA%B8%B0-%EC%82%AC%EC%A0%84-%EC%82%AC%EC%9A%A9/</url>
+    <content><![CDATA[<p>은전 한닢 형태소 분석기 사전은 아래의 예와 같이<br>Preanalysis는 기분석사전처럼 오분석을 방지하기 위해 지정한 결과로 분석을 하는 것<br>Inflected는 오분석결과를 지정한 결과로 분석하는 것<br>Compound는 복합명사로 분석할 수 있게<br>사전에 표기할 수 있다. </p>
+<p>은전한닢,0,NNG+NR+NNG,T,은전한닢,Preanalysis,NNG,NNG,은전/NNG/<em>+한/NR/</em>+닢/NNG/*<br>불태워졌,0,VV+EM+VS+EP,T,불태워졌,Inflected,VV,EP ,불태우/VV/+어/EC/+지/VX/+었/EP/<br>해수욕장,0,NNG,T ,해수욕장 ,Compound,<em>,</em>,해수/NNG/+욕/NNG/+장/NNG/*<br><a href="http://incredible.ai/nlp/2016/12/28/NLP/" target="_blank" rel="noopener">한글NLP with python</a><br><a href="https://kugancity.tistory.com/entry/mecab%EC%97%90-%EC%82%AC%EC%9A%A9%EC%9E%90%EC%82%AC%EC%A0%84%EA%B8%B0%EB%B6%84%EC%84%9D-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0" target="_blank" rel="noopener">mecab에 사용자사전/기분석 추가하기</a></p>
+<p>Elasticsearch에서 개발한 Nori형태소 분석기는 복합명사 사전만을 사용예로 제시되었는데<br>Mecab-ko-dic을 사용한다고 하니 위와 같이 Preanalsis나 Inflected의 형태의 표기도 사용되는지 확인해봐야 겠다<br><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/6.x/analysis-nori-tokenizer.html" target="_blank" rel="noopener">Nori Analyzer</a></p>
+]]></content>
+      <categories>
+        <category>search</category>
+      </categories>
+      <tags>
+        <tag>형태소분석기</tag>
+        <tag>은전한닢</tag>
+        <tag>Preanalysis</tag>
+        <tag>Inflected</tag>
+        <tag>Compound</tag>
+        <tag>Nori analyzer</tag>
+        <tag>mecab-ko-dic</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>클라우드 제품 GCP &amp; AWS</title>
     <url>/2020/06/01/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%20%EC%A0%9C%ED%92%88%20GCP%20&amp;%20AWS/</url>
-    <content><![CDATA[<h1 id="Google-Cloud-Platform-제품"><a href="#Google-Cloud-Platform-제품" class="headerlink" title="Google Cloud Platform 제품"></a>Google Cloud Platform 제품</h1><table>
+    <content><![CDATA[<p>클라우드 제품을 한 눈에 비교하고 싶어 각 사의 페이지를 긁어서 표로 만들어보았다.<br>(`20.05.25기준)</p>
+<p>Chrome의 개발자도구를 사용하여 편하게 작업할수 있었다.<br><a href="https://zzsza.github.io/development/2019/03/12/crawling-in-developer-tools-console/" target="_blank" rel="noopener">크롬 개발자 도구 Console에서 Google Play Review 크롤링하기</a></p>
+<h1 id="Google-Cloud-Platform-제품"><a href="#Google-Cloud-Platform-제품" class="headerlink" title="Google Cloud Platform 제품"></a>Google Cloud Platform 제품</h1><table>
 <thead>
 <tr>
 <th>Compute Engine</th>
@@ -1829,26 +1851,6 @@ permission java.io.FilePermission &quot;&lt;&lt;ALL FILES&gt;&gt;&quot;&gt;&gt;&
         <tag>GCP</tag>
         <tag>AWS</tag>
         <tag>클라우드제품</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>은전한닢 형태소 분석기 사전 사용</title>
-    <url>/2018/11/08/%EC%9D%80%EC%A0%84%ED%95%9C%EB%8B%A2-%ED%98%95%ED%83%9C%EC%86%8C-%EB%B6%84%EC%84%9D%EA%B8%B0-%EC%82%AC%EC%A0%84-%EC%82%AC%EC%9A%A9/</url>
-    <content><![CDATA[<p>은전 한닢 형태소 분석기 사전은 아래의 예와 같이<br>Preanalysis는 기분석사전처럼 오분석을 방지하기 위해 지정한 결과로 분석을 하는 것<br>Inflected는 오분석결과를 지정한 결과로 분석하는 것<br>Compound는 복합명사로 분석할 수 있게<br>사전에 표기할 수 있다. </p>
-<p>은전한닢,0,NNG+NR+NNG,T,은전한닢,Preanalysis,NNG,NNG,은전/NNG/<em>+한/NR/</em>+닢/NNG/*<br>불태워졌,0,VV+EM+VS+EP,T,불태워졌,Inflected,VV,EP ,불태우/VV/+어/EC/+지/VX/+었/EP/<br>해수욕장,0,NNG,T ,해수욕장 ,Compound,<em>,</em>,해수/NNG/+욕/NNG/+장/NNG/*<br><a href="http://incredible.ai/nlp/2016/12/28/NLP/" target="_blank" rel="noopener">한글NLP with python</a><br><a href="https://kugancity.tistory.com/entry/mecab%EC%97%90-%EC%82%AC%EC%9A%A9%EC%9E%90%EC%82%AC%EC%A0%84%EA%B8%B0%EB%B6%84%EC%84%9D-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0" target="_blank" rel="noopener">mecab에 사용자사전/기분석 추가하기</a></p>
-<p>Elasticsearch에서 개발한 Nori형태소 분석기는 복합명사 사전만을 사용예로 제시되었는데<br>Mecab-ko-dic을 사용한다고 하니 위와 같이 Preanalsis나 Inflected의 형태의 표기도 사용되는지 확인해봐야 겠다<br><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/6.x/analysis-nori-tokenizer.html" target="_blank" rel="noopener">Nori Analyzer</a></p>
-]]></content>
-      <categories>
-        <category>search</category>
-      </categories>
-      <tags>
-        <tag>형태소분석기</tag>
-        <tag>은전한닢</tag>
-        <tag>Preanalysis</tag>
-        <tag>Inflected</tag>
-        <tag>Compound</tag>
-        <tag>Nori analyzer</tag>
-        <tag>mecab-ko-dic</tag>
       </tags>
   </entry>
 </search>
