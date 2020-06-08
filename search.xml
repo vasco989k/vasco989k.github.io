@@ -230,6 +230,35 @@ permission java.io.FilePermission &quot;&lt;&lt;ALL FILES&gt;&gt;&quot;&gt;&gt;&
       </tags>
   </entry>
   <entry>
+    <title>Open Distro for Elasticsearch , Kibana 설치</title>
+    <url>/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/</url>
+    <content><![CDATA[<p><a href="https://gwonsungjun.github.io/articles/2018-01/DockerInstall" target="_blank" rel="noopener">윈도우10 홈에디션 도커 설치</a></p>
+<p><a href="https://opendistro.github.io/for-elasticsearch-docs/docs/install/docker/#sample-docker-compose-file" target="_blank" rel="noopener">설치</a></p>
+<p>‘’’<br>docker run -p 9200:9200 -p 9600:9600 -e “discovery.type=single-node” amazon/opendistro-for-elasticsearch:1.7.0<br>‘’’</p>
+<p>도커 기본설정으로 VirtualBox의 자원이 충분치 않아 Elasticsearch가 실행되지 않았다.<br>그래서 메모리를 4G로 충분히 늘려줬다.</p>
+<p><a href="https://woonizzooni.tistory.com/entry/Docker-Toolbox-%EC%84%A4%EC%B9%98-%EB%A9%94%EB%AA%A8%EB%A6%AC-%ED%99%95%EC%9E%A5-%EB%94%94%EC%8A%A4%ED%81%AC-%ED%99%95%EC%9E%A5-timezone%EB%B3%80%EA%B2%BD" target="_blank" rel="noopener">Docker Toolbox 설치, 메모리 확장, 디스크 확장, timezone변경</a></p>
+<p>앞서 만든 Elasticsearch 컨테이너의 IP를 확인해서 입력하면 된다.</p>
+<p>‘’’<br>docker run -d -p 5601:5601  -e “ELASTICSEARCH_URL=<a href="https://172.17.0.2&quot;" target="_blank" rel="noopener">https://172.17.0.2&quot;</a> -e “ELASTICSEARCH_HOSTS=<a href="https://172.17.0.2:9200" target="_blank" rel="noopener">https://172.17.0.2:9200</a> “ –name opendistro_kibana amazon/opendistro-for-elasticsearch-kibana:1.7.0<br>‘’’<br>kibana는 인증이 있어야 하지만 Elasticsearch를 단독으로 사용하고<br>인증이 귀찮다면 elasticsearch.yml에 기존설정을 그대로 두고 추가하면 된다.<br>‘’’<br>opendistro_security.disabled: true<br>‘’’<br><a href="https://opendistro.github.io/for-elasticsearch-docs/docs/security-configuration/disable/" target="_blank" rel="noopener">Disable security</a></p>
+<p>cerebro 0.9.1을 사용/설치했는데 버그가 있는지 접속이 되지 않았다.<br>그래서 0.9.0으로 변경했더니 이상없이 사용할 수 있었다.</p>
+<p>설치후 끝내기 아쉬워서 간단한 케이스를 수행해봤다.</p>
+<p><a href="https://danawalab.github.io/elastic/2020/05/21/Elasticsearch-SuggestApi.html" target="_blank" rel="noopener">엘라스틱서치 오타교정 API 만들어보기</a></p>
+<img src="/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/%EA%B8%B0%EC%B4%88%EC%82%AC%EC%A0%84%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C1.png" class="" title="기초사전다운로드1">
+<img src="/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/%EA%B8%B0%EC%B4%88%EC%82%AC%EC%A0%84%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C2.png" class="" title="기초사전다운로드2">
+<img src="/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/%EA%B8%B0%EC%B4%88%EC%82%AC%EC%A0%84%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C3.png" class="" title="기초사전다운로드3">
+
+<img src="/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/suggest%EA%B2%B0%EA%B3%BC.png" class="" title="suggest결과">
+]]></content>
+      <categories>
+        <category>Search</category>
+      </categories>
+      <tags>
+        <tag>Open Distro for Elasticsearch</tag>
+        <tag>Elasticsearch</tag>
+        <tag>Open Distro for kibana</tag>
+        <tag>kibana</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>책_아마존 vs. 구글 미래전쟁</title>
     <url>/2019/07/28/%5B%EC%B1%85%5D%EC%95%84%EB%A7%88%EC%A1%B4vs%EA%B5%AC%EA%B8%80%20%EB%AF%B8%EB%9E%98%EC%A0%84%EC%9F%81/</url>
     <content><![CDATA[<p>우리은행에서 머핀으로 하는 도서 경품 이벤트에 당첨이 되어<br>“아마존 vs. 구글 미래전쟁” 이란 책을 받게 되었다.</p>
@@ -436,6 +465,57 @@ permission java.io.FilePermission &quot;&lt;&lt;ALL FILES&gt;&gt;&quot;&gt;&gt;&
         <tag>Raspberry pi</tag>
         <tag>Retro pi</tag>
         <tag>Gamepad</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>머신러닝 워크플로우</title>
+    <url>/2020/06/01/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%20%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>문제유형</th>
+<th>활성화 함수</th>
+<th>오차 함수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>이진 분류</td>
+<td>시그모이드</td>
+<td>nn.CrossEntropyLoss()</td>
+</tr>
+<tr>
+<td>다중 클래스 분류</td>
+<td>소프트맥스</td>
+<td>nn.CrossEntropyLoss()</td>
+</tr>
+<tr>
+<td>다중 레이블 분류</td>
+<td>시그모이드</td>
+<td>nn.CrossEntropyLoss()</td>
+</tr>
+<tr>
+<td>회귀</td>
+<td>없음</td>
+<td>MSE</td>
+</tr>
+<tr>
+<td>벡터 회귀</td>
+<td>없음</td>
+<td>MSE</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Archive</category>
+      </categories>
+      <tags>
+        <tag>머신러닝</tag>
+        <tag>워크플로우</tag>
+        <tag>평가기준</tag>
+        <tag>데이터준비</tag>
+        <tag>문제유형</tag>
+        <tag>활성화함수</tag>
+        <tag>오차함수</tag>
       </tags>
   </entry>
   <entry>
@@ -1853,83 +1933,6 @@ permission java.io.FilePermission &quot;&lt;&lt;ALL FILES&gt;&gt;&quot;&gt;&gt;&
         <tag>GCP</tag>
         <tag>AWS</tag>
         <tag>클라우드제품</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Open Distro for Elasticsearch , Kibana 설치</title>
-    <url>/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/</url>
-    <content><![CDATA[<p><a href="https://gwonsungjun.github.io/articles/2018-01/DockerInstall" target="_blank" rel="noopener">윈도우10 홈에디션 도커 설치</a></p>
-<p><a href="https://opendistro.github.io/for-elasticsearch-docs/docs/install/docker/#sample-docker-compose-file" target="_blank" rel="noopener">설치</a></p>
-<p>‘’’<br>docker run -p 9200:9200 -p 9600:9600 -e “discovery.type=single-node” amazon/opendistro-for-elasticsearch:1.7.0<br>‘’’</p>
-<p>도커 기본설정으로 VirtualBox의 자원이 충분치 않아 Elasticsearch가 실행되지 않았다.<br>그래서 메모리를 4G로 충분히 늘려줬다.</p>
-<p><a href="https://woonizzooni.tistory.com/entry/Docker-Toolbox-%EC%84%A4%EC%B9%98-%EB%A9%94%EB%AA%A8%EB%A6%AC-%ED%99%95%EC%9E%A5-%EB%94%94%EC%8A%A4%ED%81%AC-%ED%99%95%EC%9E%A5-timezone%EB%B3%80%EA%B2%BD" target="_blank" rel="noopener">Docker Toolbox 설치, 메모리 확장, 디스크 확장, timezone변경</a></p>
-<p>앞서 만든 Elasticsearch 컨테이너의 IP를 확인해서 입력하면 된다.</p>
-<p>‘’’<br>docker run -d -p 5601:5601  -e “ELASTICSEARCH_URL=<a href="https://172.17.0.2&quot;" target="_blank" rel="noopener">https://172.17.0.2&quot;</a> -e “ELASTICSEARCH_HOSTS=<a href="https://172.17.0.2:9200" target="_blank" rel="noopener">https://172.17.0.2:9200</a> “ –name opendistro_kibana amazon/opendistro-for-elasticsearch-kibana:1.7.0<br>‘’’<br>kibana는 인증이 있어야 하지만 Elasticsearch를 단독으로 사용하고<br>인증이 귀찮다면 elasticsearch.yml에 기존설정을 그대로 두고 추가하면 된다.<br>‘’’<br>opendistro_security.disabled: true<br>‘’’<br><a href="https://opendistro.github.io/for-elasticsearch-docs/docs/security-configuration/disable/" target="_blank" rel="noopener">Disable security</a></p>
-<p>cerebro 0.9.1을 사용/설치했는데 버그가 있는지 접속이 되지 않았다.<br>그래서 0.9.0으로 변경했더니 이상없이 사용할 수 있었다.</p>
-<p>설치후 끝내기 아쉬워서 간단한 케이스를 수행해봤다.</p>
-<p><a href="https://danawalab.github.io/elastic/2020/05/21/Elasticsearch-SuggestApi.html" target="_blank" rel="noopener">엘라스틱서치 오타교정 API 만들어보기</a></p>
-<p><img src="/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/%EA%B8%B0%EC%B4%88%EC%82%AC%EC%A0%84%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C1.png" alt="기초사전다운로드1"><br><img src="/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/%EA%B8%B0%EC%B4%88%EC%82%AC%EC%A0%84%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C2.png" alt="기초사전다운로드2"><br><img src="/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/%EA%B8%B0%EC%B4%88%EC%82%AC%EC%A0%84%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C3.png" alt="기초사전다운로드3"></p>
-<p><img src="/2020/06/06/Open-Distro-for-Elasticsearch-%EC%84%A4%EC%B9%98/suggest%EA%B2%B0%EA%B3%BC.png" alt="suggest결과"></p>
-]]></content>
-      <categories>
-        <category>Search</category>
-      </categories>
-      <tags>
-        <tag>Open Distro for Elasticsearch</tag>
-        <tag>Elasticsearch</tag>
-        <tag>Open Distro for kibana</tag>
-        <tag>kibana</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>머신러닝 워크플로우</title>
-    <url>/2020/06/01/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%20%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th>문제유형</th>
-<th>활성화 함수</th>
-<th>오차 함수</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>이진 분류</td>
-<td>시그모이드</td>
-<td>nn.CrossEntropyLoss()</td>
-</tr>
-<tr>
-<td>다중 클래스 분류</td>
-<td>소프트맥스</td>
-<td>nn.CrossEntropyLoss()</td>
-</tr>
-<tr>
-<td>다중 레이블 분류</td>
-<td>시그모이드</td>
-<td>nn.CrossEntropyLoss()</td>
-</tr>
-<tr>
-<td>회귀</td>
-<td>없음</td>
-<td>MSE</td>
-</tr>
-<tr>
-<td>벡터 회귀</td>
-<td>없음</td>
-<td>MSE</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Archive</category>
-      </categories>
-      <tags>
-        <tag>머신러닝</tag>
-        <tag>워크플로우</tag>
-        <tag>평가기준</tag>
-        <tag>데이터준비</tag>
-        <tag>문제유형</tag>
-        <tag>활성화함수</tag>
-        <tag>오차함수</tag>
       </tags>
   </entry>
 </search>
